@@ -1,0 +1,20 @@
+body {
+    background-color: rgb(35, 13, 56);
+    color: white;
+}
+
+.botao {
+    background-color: black;
+    color: red;
+    border-radius: 18px;
+    border-color: red;
+    transform: translateY(20%);
+    animation: infinite;
+    align-items: center;
+}
+
+.h1 {
+   background-color: red;
+   color: black;
+   border-radius: 20px;
+}
