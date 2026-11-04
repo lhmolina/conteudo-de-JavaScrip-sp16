@@ -1,0 +1,8 @@
+1-acordo
+2-levando
+3-vejo a hora 
+4-vou ao banheiro
+5-olho o rosto no espelho
+6-e começo a escovar os dentes
+7-depois enchago 
+8-fim
