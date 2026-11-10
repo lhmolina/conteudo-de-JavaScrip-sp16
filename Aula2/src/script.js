@@ -29,7 +29,7 @@ console.log("")
 //tipos de dados no JavaScript: numeros e strings
 
 let ex1numero = 40;
-let ex1string = "Claudio";
+let ex1string = "Lucas";
 let ex2string = "40";
 
 console.log(ex1numero)
@@ -42,7 +42,7 @@ console.log(typeof ex2string)
 
 //Declarando varias variaveis em uma unica linha
 
-let ex1 = "Claudio", ex2 = 90, ex3 = 85;
+let ex1 = "Lucas", ex2 = 90, ex3 = 85;
 
 //Operações aritmeticas no JavaScript
 
@@ -50,7 +50,7 @@ let soma = 10 + 6 + 4;
 
 console.log("A resultado de 10 + 6 + 4 e:" + soma)
 
-let nomecompleto = "Claudio" + "" + "da" + "Silva"
+let nomecompleto = "Lucas" + "Molina" + "da" + "Silva"
 
 console.log(nomecompleto)
 
