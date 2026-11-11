@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bolso Jovem – Cadastro e Login</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bj pre" id="app">
+ 
+  <!-- ===== PAINEL ESQUERDO ===== -->
+  <aside class="side">
+    <svg class="deco-top" viewBox="0 0 250 200" aria-hidden="true">
+      <defs>
+        <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="var(--g1)"/><stop offset=".55" stop-color="var(--g2)"/><stop offset="1" stop-color="var(--g3)"/>
+        </linearGradient>
+      </defs>
+      <polygon points="0,0 250,0 150,120 0,200" fill="var(--sh)"/>
+      <polygon points="0,0 190,0 0,150" fill="url(#gg)"/>
+    </svg>
+ 
+    <svg class="deco-bottom" viewBox="0 480 560 320" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+      <polygon points="0,560 0,800 330,800" fill="var(--sh)"/>
+      <polygon points="0,690 0,800 160,800" fill="url(#gg)"/>
+      <g class="chart" id="chart" role="img" aria-label="Gráfico de barras com seta de crescimento">
+        <rect class="b1" x="168" y="672" width="50" height="78" rx="6" fill="url(#gg)"/>
+        <rect class="b2" x="236" y="632" width="50" height="118" rx="6" fill="url(#gg)"/>
+        <rect class="b3" x="304" y="586" width="50" height="164" rx="6" fill="url(#gg)"/>
+        <polyline class="ln" points="150,640 212,586 252,612 346,520" fill="none" stroke="url(#gg)" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+        <polygon class="hd" points="372,494 322,510 356,548" fill="url(#gg)" stroke="url(#gg)" stroke-width="6" stroke-linejoin="round"/>
+      </g>
+    </svg>
+ 
+    <div class="logo">
+      <svg width="64" height="56" viewBox="0 0 64 56" aria-hidden="true"><rect x="4" y="12" width="56" height="40" rx="9" fill="url(#gg)"/><rect x="4" y="6" width="44" height="12" rx="6" fill="var(--g3)"/><rect x="38" y="26" width="26" height="16" rx="8" fill="var(--bg)" stroke="var(--g1)" stroke-width="2"/><circle cx="48" cy="34" r="3" fill="var(--g2)"/></svg>
+      <div class="logo-text">Bolso<br><span class="gt">Jovem</span></div>
+    </div>
+    <p class="tagline">Comece hoje a organizar sua vida financeira e conquiste seus sonhos.</p>
+ 
+    <div class="feats" id="feats">
+      <button type="button" class="feat" data-feat>
+        <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7"/></svg></span>
+        <span class="tx"><span>Cadastro rápido e gratuito</span><span class="fdesc">Crie sua conta em menos de um minuto, sem custo.</span></span>
+      </button>
+      <button type="button" class="feat" data-feat>
+        <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M7 11V8a5 5 0 0110 0v3M6 11h12v9H6z"/></svg></span>
+        <span class="tx"><span>Seus dados protegidos</span><span class="fdesc">Verificação por código e senha com 8+ caracteres.</span></span>
+      </button>
+      <button type="button" class="feat" data-feat>
+        <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M12 4a8 8 0 100 16 8 8 0 000-16zM12 9a3 3 0 100 6 3 3 0 000-6z"/></svg></span>
+        <span class="tx"><span>Metas e planos sob medida</span><span class="fdesc">Defina objetivos e acompanhe seu progresso.</span></span>
+      </button>
+    </div>
+  </aside>
+ 
+  <!-- ===== PAINEL DIREITO ===== -->
+  <main class="main">
+    <button type="button" class="tg btn" id="themeBtn" aria-label="Alternar tema claro ou escuro">
+      <span class="knob" id="themeIcon"></span><span id="themeLabel">Tema escuro</span>
+    </button>
+ 
+    <!-- CADASTRO -->
+    <form class="scr" data-screen="signup" data-form="signup" novalidate>
+      <h1>Crie sua <span class="gt">conta</span></h1>
+      <p class="sub">Preencha os dados abaixo e comece sua<br>jornada com o Bolso Jovem.</p>
+ 
+      <div class="group">
+        <label class="fld"><svg width="20" height="20" viewBox="0 0 24 24" class="ic" aria-hidden="true"><circle cx="12" cy="8" r="4.5"/><path d="M4 21c0-4.5 3.5-7 8-7s8 2.5 8 7"/></svg><input type="text" id="sName" placeholder="Qual seu nome?" aria-label="Qual seu nome?" autocomplete="given-name"></label>
+        <div class="err" role="alert" hidden></div>
+      </div>
+      <div class="group">
+        <label class="fld"><svg width="20" height="20" viewBox="0 0 24 24" class="ic" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><input type="email" id="sEmail" placeholder="Seu e-mail" aria-label="E-mail" autocomplete="email"></label>
+        <div class="err" role="alert" hidden></div>
+      </div>
+      <div class="group">
+        <label class="fld"><svg width="20" height="20" viewBox="0 0 24 24" class="ic" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg><input type="password" class="pw" id="sPass" placeholder="Crie uma senha" aria-label="Senha" autocomplete="new-password" data-strength="sStrength"><button type="button" class="eye" data-eye aria-label="Mostrar ou ocultar senha"><svg width="20" height="20" viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/><path class="slash" d="M4 4l16 16"/></svg></button></label>
+        <div class="strength" id="sStrength" hidden><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="slabel"></span></div>
+        <div class="err" role="alert" hidden></div>
+      </div>
+      <div class="group">
+        <label class="fld"><svg width="20" height="20" viewBox="0 0 24 24" class="ic" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg><input type="password" class="pw" id="sConf" placeholder="Confirme sua senha" aria-label="Confirmar senha" autocomplete="new-password"></label>
+        <div class="err" role="alert" hidden></div>
+      </div>
+      <div class="group terms">
+        <label class="check"><input type="checkbox" id="sTerms"><span>Li e concordo com os <a class="lk" href="#">Termos de uso</a> e a <a class="lk" href="#">Política de privacidade</a>.</span></label>
+        <div class="err" role="alert" hidden></div>
+      </div>
+      <button type="submit" class="pri gold btn">Criar conta <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A1405" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
+      <div class="or"><span></span>ou<span></span></div>
+      <button type="button" class="ggl btn" data-act="google" data-origin="signup"><svg class="g" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.6a4.8 4.8 0 01-2.1 3.1v2.6h3.4c2-1.8 3.1-4.500 3.1-7.500z"/><path fill="#34A853" d="M12 22c2.800 0 5.200-.9 6.900-2.500l-3.400-2.600c-.9.600-2.100 1-3.500 1-2.700 0-5-1.800-5.800-4.300H2.700v2.700A10 10 0 0012 22z"/><path fill="#FBBC05" d="M6.200 13.600a6 6 0 010-3.800V7.100H2.700a10 10 0 000 9.200z"/><path fill="#EA4335" d="M12 6c1.500 0 2.900.5 4 1.600l3-3A10 10 0 002.700 7.100l3.500 2.700C7 7.800 9.300 6 12 6z"/></svg>Cadastrar com Google</button>
+      <p class="foot">Já tem uma conta? &nbsp;<button type="button" class="lk lkb" data-go="login">Entrar</button></p>
+    </form>
+ 
+    <!-- LOGIN -->
+    <form class="scr" data-screen="login" data-form="login" novalidate hidden>
+      <h1 class="big">Bem-vindo de <span class="gt">volta!</span></h1>
+      <p class="sub">Acesse sua conta e continue sua<br>jornada com o Bolso Jovem.</p>
+      <div class="group">
+        <label class="fld"><svg width="20" height="20" viewBox="0 0 24 24" class="ic" aria-hidden="true"><circle cx="12" cy="8" r="4.5"/><path d="M4 21c0-4.5 3.5-7 8-7s8 2.5 8 7"/></svg><input type="text" id="lEmail" placeholder="Seu e-mail ou usuário" aria-label="E-mail ou usuário" autocomplete="username"></label>
+      </div>
+      <div class="group">
+        <label class="fld"><svg width="20" height="20" viewBox="0 0 24 24" class="ic" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg><input type="password" class="pw" id="lPass" placeholder="Sua senha" aria-label="Senha" autocomplete="current-password"><button type="button" class="eye" data-eye aria-label="Mostrar ou ocultar senha"><svg width="20" height="20" viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/><path class="slash" d="M4 4l16 16"/></svg></button></label>
+        <div class="err" id="lErr" role="alert" hidden></div>
+      </div>
+      <div class="row">
+        <label class="check"><input type="checkbox" id="lRem" checked><span>Lembrar de mim</span></label>
+        <button type="button" class="lk lkb" data-go="forgot">Esqueceu a senha?</button>
+      </div>
+      <button type="submit" class="pri gold btn">Entrar <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A1405" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
+      <div class="or"><span></span>ou<span></span></div>
+      <button type="button" class="ggl btn" data-act="google" data-origin="login"><svg class="g" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.6a4.8 4.8 0 01-2.1 3.1v2.6h3.4c2-1.8 3.1-4.500 3.1-7.500z"/><path fill="#34A853" d="M12 22c2.800 0 5.200-.9 6.900-2.500l-3.400-2.600c-.9.600-2.100 1-3.500 1-2.700 0-5-1.800-5.800-4.300H2.700v2.700A10 10 0 0012 22z"/><path fill="#FBBC05" d="M6.200 13.600a6 6 0 010-3.800V7.100H2.700a10 10 0 000 9.200z"/><path fill="#EA4335" d="M12 6c1.500 0 2.900.5 4 1.600l3-3A10 10 0 002.700 7.100l3.500 2.700C7 7.800 9.300 6 12 6z"/></svg>Entrar com Google</button>
+      <p class="foot">Ainda não tem uma conta? &nbsp;<button type="button" class="lk lkb" data-go="signup">Cadastre-se</button></p>
+    </form>
+ 
+    <!-- ESQUECEU A SENHA -->
+    <form class="scr" data-screen="forgot" data-form="forgot" novalidate hidden>
+      <div class="badge gold"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1A1405" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3M14 9l2 2"/></svg></div>
+      <h1>Esqueceu a <span class="gt">senha?</span></h1>
+      <p class="sub">Informe o e-mail da sua conta e enviaremos<br>um código para você criar uma nova senha.</p>
+      <div class="group">
+        <label class="fld"><svg width="20" height="20" viewBox="0 0 24 24" class="ic" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><input type="email" id="fEmail" placeholder="Seu e-mail" aria-label="E-mail da conta" autocomplete="email"></label>
+        <div class="err" role="alert" hidden></div>
+      </div>
+      <button type="submit" class="pri gold btn">Enviar código</button>
+      <p class="foot">Lembrou a senha? &nbsp;<button type="button" class="lk lkb" data-go="login">Voltar ao login</button></p>
+    </form>
+ 
+    <!-- CÓDIGO (Google e redefinir senha) -->
+    <form class="scr" data-screen="otp" data-form="otp" novalidate hidden>
+      <div class="badge gold"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1A1405" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+      <h1>Verifique seu <span class="gt">e-mail</span></h1>
+      <p class="sub" id="otpSub"></p>
+      <div class="demo">Modo demonstração: nenhum e-mail real é enviado.<br>Seu código é <b class="gt" id="otpCode"></b></div>
+      <div class="group">
+        <label class="fld"><input type="text" class="code" id="otpIn" inputmode="numeric" maxlength="6" placeholder="000000" aria-label="Código de verificação" autocomplete="one-time-code"></label>
+        <div class="err" id="otpErr" role="alert" hidden></div>
+      </div>
+      <button type="submit" class="pri gold btn">Verificar código</button>
+      <div class="links2"><button type="button" class="lk lkb" data-act="resend">Reenviar código</button><button type="button" class="lk lkb" data-act="otpBack" id="otpBack">Trocar e-mail</button></div>
+    </form>
+ 
+    <!-- NOVA SENHA -->
+    <form class="scr" data-screen="reset" data-form="reset" novalidate hidden>
+      <div class="badge gold"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1A1405" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg></div>
+      <h1>Crie uma nova <span class="gt">senha</span></h1>
+      <p class="sub">Código confirmado! Escolha uma senha nova<br>para a conta <b id="rEmail"></b></p>
+      <div class="group">
+        <label class="fld"><svg width="20" height="20" viewBox="0 0 24 24" class="ic" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg><input type="password" class="pw" id="rPass" placeholder="Nova senha" aria-label="Nova senha" autocomplete="new-password" data-strength="rStrength"><button type="button" class="eye" data-eye aria-label="Mostrar ou ocultar senha"><svg width="20" height="20" viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/><path class="slash" d="M4 4l16 16"/></svg></button></label>
+        <div class="strength" id="rStrength" hidden><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="slabel"></span></div>
+        <div class="err" role="alert" hidden></div>
+      </div>
+      <div class="group">
+        <label class="fld"><svg width="20" height="20" viewBox="0 0 24 24" class="ic" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg><input type="password" class="pw" id="rConf" placeholder="Confirme a nova senha" aria-label="Confirmar nova senha" autocomplete="new-password"></label>
+        <div class="err" role="alert" hidden></div>
+      </div>
+      <button type="submit" class="pri gold btn">Salvar nova senha</button>
+      <p class="foot"><button type="button" class="lk lkb" data-go="login">Cancelar</button></p>
+    </form>
+ 
+    <!-- ESCOLHER CONTA GOOGLE -->
+    <form class="scr" data-screen="picker" data-form="picker" novalidate hidden>
+      <div class="badge ico round"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.6a4.8 4.8 0 01-2.1 3.1v2.6h3.4c2-1.8 3.1-4.500 3.1-7.500z"/><path fill="#34A853" d="M12 22c2.800 0 5.200-.9 6.900-2.500l-3.400-2.600c-.9.600-2.100 1-3.500 1-2.700 0-5-1.800-5.800-4.300H2.700v2.700A10 10 0 0012 22z"/><path fill="#FBBC05" d="M6.200 13.600a6 6 0 010-3.800V7.100H2.700a10 10 0 000 9.200z"/><path fill="#EA4335" d="M12 6c1.500 0 2.900.5 4 1.600l3-3A10 10 0 002.700 7.100l3.500 2.700C7 7.800 9.300 6 12 6z"/></svg></div>
+      <h1 class="mid">Escolha uma <span class="gt">conta</span></h1>
+      <p class="sub">para continuar no Bolso Jovem com o Google</p>
+      <div class="accts" id="accts"></div>
+      <div class="or"><span></span>ou use outro e-mail<span></span></div>
+      <div class="group">
+        <label class="fld"><svg width="20" height="20" viewBox="0 0 24 24" class="ic" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><input type="email" id="gEmail" placeholder="seu.email@gmail.com" aria-label="Outro e-mail Google"></label>
+        <div class="err" role="alert" hidden></div>
+      </div>
+      <button type="submit" class="pri gold btn">Continuar</button>
+      <p class="foot"><button type="button" class="lk lkb" data-act="pickerBack">Voltar</button></p>
+    </form>
+ 
+    <!-- SUCESSO -->
+    <section class="scr done" data-screen="done" hidden>
+      <div class="sparks" id="sparks" aria-hidden="true"></div>
+      <div class="okc gold"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#1A1405" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="ck" d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+      <h1 id="doneTitle"></h1>
+      <p class="welcome" id="doneWelcome"></p>
+      <p class="sub" id="doneMsg"></p>
+      <button type="button" class="pri gold btn" data-go="login">Voltar ao login</button>
+    </section>
+  </main>
+</div>
+ 
+<!-- ===== ANIMAÇÃO DE ENTRADA (splash) ===== -->
+<div class="splash" id="splash" role="status" aria-label="Carregando o Bolso Jovem">
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div class="glow" aria-hidden="true"></div>
+  <div class="stage">
+    <svg class="mark" viewBox="0 0 200 200" aria-hidden="true">
+      <defs>
+        <linearGradient id="sg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#F6DE92"/><stop offset=".55" stop-color="#D4AF37"/><stop offset="1" stop-color="#9C7A1E"/>
+        </linearGradient>
+      </defs>
+      <circle class="shock" cx="100" cy="100" r="30" fill="none" stroke="#F6DE92" stroke-width="2"/>
+      <circle class="ring2" cx="100" cy="100" r="78" fill="none" stroke="#D4AF37" stroke-width="2" stroke-dasharray="2 11" stroke-linecap="round"/>
+      <circle class="ring" cx="100" cy="100" r="88" fill="none" stroke="url(#sg)" stroke-width="3" stroke-linecap="round"/>
+      <rect class="sb sb1" x="56" y="104" width="24" height="36" rx="4" fill="url(#sg)"/>
+      <rect class="sb sb2" x="88" y="82" width="24" height="58" rx="4" fill="url(#sg)"/>
+      <rect class="sb sb3" x="120" y="56" width="24" height="84" rx="4" fill="url(#sg)"/>
+      <polyline class="sl" points="44,92 76,66 96,80 140,40" fill="none" stroke="url(#sg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <polygon class="sh2" points="156,26 130,36 148,54" fill="url(#sg)" stroke="url(#sg)" stroke-width="4" stroke-linejoin="round"/>
+    </svg>
+    <div class="word" id="word" aria-hidden="true"></div>
+    <p class="stag" id="splashTag">Seu futuro financeiro começa aqui</p>
+  </div>
+  <div class="load" aria-hidden="true"><i></i></div>
+  <button type="button" class="skip" id="skip">Pular</button>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
+ 
